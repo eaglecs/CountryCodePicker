@@ -13,9 +13,9 @@ import androidx.core.graphics.drawable.DrawableCompat;
 import androidx.core.widget.TextViewCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.eaglecs.R;
 import com.futuremind.recyclerviewfastscroll.viewprovider.DefaultScrollerViewProvider;
 import com.futuremind.recyclerviewfastscroll.viewprovider.ScrollerViewProvider;
-import com.hbb20.R;
 
 /**
  * Created by mklimczak on 28/07/15.

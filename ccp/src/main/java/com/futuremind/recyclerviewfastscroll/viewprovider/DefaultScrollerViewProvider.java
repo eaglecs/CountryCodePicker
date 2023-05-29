@@ -7,8 +7,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.eaglecs.R;
 import com.futuremind.recyclerviewfastscroll.Utils;
-import com.hbb20.R;
 
 /**
  * Created by Michal on 05/08/16.

@@ -26,6 +26,7 @@ import androidx.core.view.WindowInsetsControllerCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.eaglecs.R;
 import com.futuremind.recyclerviewfastscroll.FastScroller;
 
 import java.lang.reflect.Field;

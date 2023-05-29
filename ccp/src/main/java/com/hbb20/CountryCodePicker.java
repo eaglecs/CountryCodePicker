@@ -29,6 +29,8 @@ import android.widget.Toast;
 import androidx.annotation.DrawableRes;
 import androidx.annotation.IdRes;
 
+import com.eaglecs.R;
+
 import java.io.PrintWriter;
 import java.io.StringWriter;
 import java.util.ArrayList;

@@ -2,6 +2,14 @@ apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 
 android {
+    signingConfigs {
+        debug {
+            keyAlias 'omni_demo'
+            storeFile file('omni_demo.jks')
+            storePassword '123456a@A'
+            keyPassword '123456a@A'
+        }
+    }
     compileSdkVersion 33
 
     defaultConfig {
@@ -10,6 +18,7 @@ android {
         targetSdkVersion 33
         versionCode 7
         versionName "2.2.4"
+        signingConfig signingConfigs.debug
     }
     buildTypes {
         release {

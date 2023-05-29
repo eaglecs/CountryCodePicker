@@ -7,7 +7,7 @@ import android.animation.AnimatorSet;
 import androidx.annotation.AnimatorRes;
 import android.view.View;
 
-import com.hbb20.R;
+import com.eaglecs.R;
 
 
 /**

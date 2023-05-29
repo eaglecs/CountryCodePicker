@@ -3,7 +3,7 @@ apply plugin: 'com.vanniktech.maven.publish'
 
 android {
     compileSdkVersion 33
-
+    namespace 'com.hbb20'
     defaultConfig {
         minSdkVersion 14
         targetSdkVersion 33

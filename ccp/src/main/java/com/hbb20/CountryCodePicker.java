@@ -83,6 +83,7 @@ public class CountryCodePicker extends RelativeLayout {
     boolean showFullName = false;
     boolean showFastScroller = true;
     boolean ccpDialogShowTitle = true;
+    String ccpDialogTitle = "";
     boolean ccpDialogShowFlag = true;
     boolean ccpDialogRippleEnable = true;
     boolean searchAllowed = true;
@@ -254,6 +255,10 @@ public class CountryCodePicker extends RelativeLayout {
             //show title on dialog
             ccpDialogShowTitle = a.getBoolean(R.styleable.CountryCodePicker_ccpDialog_showTitle, true);
 
+            String titleValue = a.getString(R.styleable.CountryCodePicker_ccpDialog_Title);
+            if (titleValue != null){
+                ccpDialogTitle = titleValue;
+            }
             //show title on dialog
             ccpUseEmoji = a.getBoolean(R.styleable.CountryCodePicker_ccp_useFlagEmoji, false);
 
@@ -596,6 +601,14 @@ public class CountryCodePicker extends RelativeLayout {
      */
     public void setCcpDialogShowTitle(boolean ccpDialogShowTitle) {
         this.ccpDialogShowTitle = ccpDialogShowTitle;
+    }
+
+    public String getCcpDialogTitle(){
+        return this.ccpDialogTitle;
+    }
+
+    public void  setCcpDialogTitle(String ccpDialogTitle){
+        this.ccpDialogTitle = ccpDialogTitle;
     }
 
     /**
@@ -990,10 +1003,11 @@ public class CountryCodePicker extends RelativeLayout {
     }
 
     public Language getLanguageToApply() {
-        if (languageToApply == null) {
-            updateLanguageToApply();
-        }
-        return languageToApply;
+//        if (languageToApply == null) {
+//            updateLanguageToApply();
+//        }
+//        return languageToApply;
+        return Language.VIETNAMESE;
     }
 
     void setLanguageToApply(Language languageToApply) {

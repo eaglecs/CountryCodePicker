@@ -10,4 +10,7 @@
     <dimen name="fastscroll__handle_inset">9dp</dimen>
     <dimen name="fastscroll__handle_clickable_width">24dp</dimen>
     <dimen name="fastscroll__handle_padding">2dp</dimen>
+    <dimen name="default_padding_margin">8dp</dimen>
+    <dimen name="text_size_title">16sp</dimen>
+    <dimen name="text_size_subtitle">14sp</dimen>
 </resources>

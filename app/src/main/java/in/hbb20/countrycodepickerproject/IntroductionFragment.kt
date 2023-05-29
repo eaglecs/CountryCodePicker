@@ -38,6 +38,7 @@ class IntroductionFragment: Fragment() {
 		etPhone = view!!.findViewById(R.id.et_phone)
 		countryCodePicker = view!!.findViewById(R.id.ccp)
 		countryCodePicker.registerCarrierNumberEditText(etPhone)
+
 	}
 
 	private fun setClickListener() {

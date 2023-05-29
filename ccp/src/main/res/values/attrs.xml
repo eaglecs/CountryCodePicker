@@ -74,6 +74,7 @@
         <attr name="ccpDialog_searchEditTextTint" format="color" />
         <attr name="ccpDialog_showCloseIcon" format="boolean" />
         <attr name="ccpDialog_showTitle" format="boolean" />
+        <attr name="ccpDialog_Title" format="string" />
         <attr name="ccpDialog_initialScrollToSelection" format="boolean" />
         <attr name="ccpDialog_rippleEnable" format="boolean" />
         <!--list of languages-->
@@ -141,5 +142,10 @@
             <enum name="LOCALE_SIM_NETWORK" value="312" />
             <enum name="LOCALE_NETWORK_SIM" value="321" />
         </attr>
+    </declare-styleable>
+    <declare-styleable name="RealtimeBlurView">
+        <attr name="realtimeBlurRadius" format="dimension"/>
+        <attr name="realtimeDownsampleFactor" format="float"/>
+        <attr name="realtimeOverlayColor" format="color"/>
     </declare-styleable>
 </resources>

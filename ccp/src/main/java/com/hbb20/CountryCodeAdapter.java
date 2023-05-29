@@ -283,7 +283,7 @@ class CountryCodeAdapter extends RecyclerView.Adapter<CountryCodeAdapter.Country
                     countryName += " (" + ccpCountry.getNameCode().toUpperCase(Locale.US) + ")";
                 }
 
-                textView_name.setText(countryName);
+                textView_name.setText(ccpCountry.getName());
                 textView_code.setText("+" + ccpCountry.getPhoneCode());
 
                 if (!codePicker.getCcpDialogShowFlag() || codePicker.ccpUseEmoji) {

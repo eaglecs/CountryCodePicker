@@ -2,7 +2,7 @@
 <data>
     <messages>
         <ccp_dialog_title translation="Chọn một quốc gia" />
-        <ccp_dialog_search_hint_message translation="Tìm kiếm…" />
+        <ccp_dialog_search_hint_message translation="Tìm quốc gia của bạn" />
         <ccp_dialog_no_result_ack_message translation='Không tìm thấy kết quả' />
     </messages>
 
@@ -13,7 +13,7 @@
             name_code="ad"
             phone_code="376" />
         <country
-            name="Các Tiểu vương quốc Ả Rập thống nhất (UAE)"
+            name="Các Tiểu vương quốc Ả Rập thống nhất"
             english_name="United Arab Emirates (UAE)"
             name_code="ae"
             phone_code="971" />
@@ -188,7 +188,7 @@
             name_code="ca"
             phone_code="1" />
         <country
-            name="Quần đảo Cocos (keeling)"
+            name="Quần đảo Cocos"
             english_name="Cocos (keeling) Islands"
             name_code="cc"
             phone_code="61" />
@@ -348,7 +348,7 @@
             name_code="fj"
             phone_code="679" />
         <country
-            name="Quần đảo Falkland (malvinas)"
+            name="Quần đảo Falkland"
             english_name="Falkland Islands (malvinas)"
             name_code="fk"
             phone_code="500" />
@@ -698,7 +698,7 @@
             name_code="mh"
             phone_code="692" />
         <country
-            name="Macedonia (FYROM)"
+            name="Macedonia"
             english_name="Macedonia (FYROM)"
             name_code="mk"
             phone_code="389" />
@@ -1143,7 +1143,7 @@
             name_code="uz"
             phone_code="998" />
         <country
-            name="Holy See (vatican City State)"
+            name="Holy See"
             english_name="Holy See (vatican City State)"
             name_code="va"
             phone_code="379" />

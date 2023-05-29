@@ -1,13 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/cardViewRoot"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:clickable="true"
+    android:focusable="true"
+    android:orientation="vertical">
+
+    <com.blur.RealtimeBlurView
+        android:id="@+id/vgTop"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:realtimeBlurRadius="@dimen/default_padding_margin"
+        app:realtimeOverlayColor="#BFC7D6FF" />
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_marginTop="150dp"
+        android:background="@drawable/bg_popup"
+        android:clickable="true"
+        android:focusable="true"
         android:orientation="vertical"
         android:padding="8dp">
 
@@ -20,45 +34,62 @@
                 android:id="@+id/textView_title"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="10dp"
                 android:layout_toStartOf="@+id/img_dismiss"
                 android:layout_toLeftOf="@+id/img_dismiss"
                 android:text="@string/select_country"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:textColor="@android:color/secondary_text_light" />
 
-            <ImageView
+            <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/img_dismiss"
                 android:layout_width="36dp"
                 android:layout_height="36dp"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentRight="true"
                 android:layout_centerVertical="true"
-                android:alpha="0.7"
+                android:layout_marginBottom="12dp"
                 android:clickable="true"
                 android:contentDescription="@string/dismiss_button_content_description"
                 android:focusable="true"
                 android:padding="4dp"
-                app:srcCompat="@drawable/ic_clear_black_24dp" />
+                app:srcCompat="@drawable/ic_clear_black_24dp"
+                app:tint="#ffffff" />
         </RelativeLayout>
 
         <RelativeLayout
             android:id="@+id/rl_query_holder"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/rl_title">
+            android:layout_below="@+id/rl_title"
+            android:background="@drawable/bg_round_dart">
 
             <EditText
+                style="@style/TextBody16Regular"
                 android:id="@+id/editText_search"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_toStartOf="@+id/img_clear_query"
                 android:layout_toLeftOf="@+id/img_clear_query"
+                android:background="#00000000"
+                android:drawableStart="@drawable/ic_search"
+                android:drawablePadding="16dp"
                 android:hint="@string/search_hint_text"
                 android:imeOptions="actionSearch"
                 android:inputType="textNoSuggestions"
+                android:paddingStart="12dp"
+                android:paddingTop="16dp"
+                android:paddingEnd="12dp"
+                android:paddingBottom="16dp"
                 android:singleLine="true"
-                android:textColor="@android:color/primary_text_light_nodisable" />
+                android:textColor="#ffffff"
+                android:textColorHint="#80ffffff"
+                android:textCursorDrawable="@drawable/color_cursor_dart" />
 
             <ImageView
                 android:id="@+id/img_clear_query"
@@ -72,6 +103,7 @@
                 android:contentDescription="@string/clear_search_button_content_description"
                 android:focusable="true"
                 android:padding="10dp"
+                android:tint="#ffffff"
                 app:srcCompat="@drawable/ic_backspace_black_24dp" />
         </RelativeLayout>
 
@@ -105,4 +137,4 @@
 
     </RelativeLayout>
 
-</androidx.cardview.widget.CardView>
+</FrameLayout>

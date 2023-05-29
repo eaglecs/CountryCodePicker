@@ -18,6 +18,7 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import androidx.appcompat.widget.LinearLayoutCompat;
 import androidx.cardview.widget.CardView;
 import androidx.core.content.ContextCompat;
 import androidx.core.view.WindowInsetsCompat;
@@ -87,7 +88,8 @@ class CountryCodeDialog {
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
         dialog.getWindow().setContentView(R.layout.layout_picker_dialog);
         dialog.getWindow().setBackgroundDrawable(ContextCompat.getDrawable(context, android.R.color.transparent));
-
+        dialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT, WindowManager.LayoutParams.MATCH_PARENT);
+        dialog.getWindow().setBackgroundDrawableResource(android.R.color.transparent);
 
         //dialog views
         RecyclerView recyclerView_countryDialog = (RecyclerView) dialog.findViewById(R.id.recycler_countryDialog);
@@ -96,7 +98,8 @@ class CountryCodeDialog {
         ImageView imgClearQuery = (ImageView) dialog.findViewById(R.id.img_clear_query);
         final EditText editText_search = (EditText) dialog.findViewById(R.id.editText_search);
         TextView textView_noResult = (TextView) dialog.findViewById(R.id.textView_noresult);
-        CardView dialogRoot = (CardView) dialog.findViewById(R.id.cardViewRoot);
+//        CardView dialogRoot = (CardView) dialog.findViewById(R.id.cardViewRoot);
+        View vgTop = (View) dialog.findViewById(R.id.vgTop);
         ImageView imgDismiss = (ImageView) dialog.findViewById(R.id.img_dismiss);
 
         //keyboard
@@ -125,28 +128,33 @@ class CountryCodeDialog {
         }
 
         //dialog background color
-        if (codePicker.getDialogBackgroundColor() != 0) {
-            dialogRoot.setCardBackgroundColor(codePicker.getDialogBackgroundColor());
-        }
-
-        if (codePicker.getDialogBackgroundResId() != 0) {
-            dialogRoot.setBackgroundResource(codePicker.getDialogBackgroundResId());
-        }
-
-        dialogRoot.setRadius(codePicker.getDialogCornerRadius());
+//        if (codePicker.getDialogBackgroundColor() != 0) {
+//            dialogRoot.setCardBackgroundColor(codePicker.getDialogBackgroundColor());
+//        }
+//
+//        if (codePicker.getDialogBackgroundResId() != 0) {
+//            dialogRoot.setBackgroundResource(codePicker.getDialogBackgroundResId());
+//        }
+//
+//        dialogRoot.setRadius(codePicker.getDialogCornerRadius());
 
         //close button visibility
         if (codePicker.isShowCloseIcon()) {
             imgDismiss.setVisibility(View.VISIBLE);
-            imgDismiss.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    dialog.dismiss();
-                }
+            imgDismiss.setOnClickListener(view -> {
+                InputMethodManager imm = (InputMethodManager) context.getSystemService(Context.INPUT_METHOD_SERVICE);
+                imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
+                dialog.dismiss();
             });
         } else {
             imgDismiss.setVisibility(View.GONE);
         }
+
+        vgTop.setOnClickListener(view -> {
+            InputMethodManager imm = (InputMethodManager) context.getSystemService(Context.INPUT_METHOD_SERVICE);
+            imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
+            dialog.dismiss();
+        });
 
         //title
         if (!codePicker.getCcpDialogShowTitle()) {
@@ -175,7 +183,12 @@ class CountryCodeDialog {
 
 
         //add messages to views
-        textViewTitle.setText(codePicker.getDialogTitle());
+        if (codePicker.getCcpDialogTitle().isEmpty()) {
+            textViewTitle.setText(codePicker.getDialogTitle());
+        } else {
+            textViewTitle.setText(codePicker.getCcpDialogTitle());
+
+        }
         editText_search.setHint(codePicker.getSearchHintText());
         textView_noResult.setText(codePicker.getNoResultACK());
 

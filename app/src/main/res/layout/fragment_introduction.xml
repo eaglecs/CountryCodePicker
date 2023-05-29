@@ -115,12 +115,10 @@
                                 android:id="@+id/ccp"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                app:ccpDialog_cornerRadius="8dp"
-                                app:ccpDialog_keyboardAutoPopup="true"
                                 app:ccpDialog_allowSearch="true"
-                                app:ccp_autoDetectCountry="true"
-                                app:ccp_countryPreference="in,us,nz,gb"
-                                app:ccp_hintExampleNumber="true"
+                                app:ccpDialog_showTitle="false"
+                                app:ccpDialog_textColor="#ffffff"
+                                app:ccpDialog_showCloseIcon="true"
                                 />
 
                             <EditText

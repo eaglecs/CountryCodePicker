@@ -9,6 +9,12 @@ android {
             storePassword '123456a@A'
             keyPassword '123456a@A'
         }
+        release {
+            keyAlias 'omni_demo'
+            storeFile file('omni_demo.jks')
+            storePassword '123456a@A'
+            keyPassword '123456a@A'
+        }
     }
     compileSdkVersion 33
 
@@ -24,6 +30,7 @@ android {
         release {
             // Enables code shrinking, obfuscation, and optimization for only
             // your project's release build type.
+            signingConfig signingConfigs.release
             minifyEnabled true
 
             // Enables resource shrinking, which is performed by the

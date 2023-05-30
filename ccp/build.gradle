@@ -2,6 +2,20 @@ apply plugin: 'com.android.library'
 apply plugin: 'com.vanniktech.maven.publish'
 
 android {
+    signingConfigs {
+        debug {
+            keyAlias 'omni_demo'
+            storeFile file('omni_demo.jks')
+            storePassword '123456a@A'
+            keyPassword '123456a@A'
+        }
+        release {
+            keyAlias 'omni_demo'
+            storeFile file('omni_demo.jks')
+            storePassword '123456a@A'
+            keyPassword '123456a@A'
+        }
+    }
     compileSdkVersion 33
     namespace 'com.eaglecs'
     defaultConfig {
@@ -12,6 +26,7 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
         }
     }
     defaultConfig {
